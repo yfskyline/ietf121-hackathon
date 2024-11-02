@@ -1,0 +1,22 @@
+name: bgp-ls
+mgmt: {}
+topology:
+  nodes:
+    goBGP1:
+      kind: linux
+      image: ubuntu:latest
+      #command: ["bash", "-c", "while true; do sleep 3600; done"]
+    goBGP2:
+      kind: linux
+      image: ubuntu:latest
+      #command: ["bash", "-c", "while true; do sleep 3600; done"]
+    wireshark:
+      kind: linux
+      image: ubuntu:latest
+      #command: ["wireshark", "--display-format=gtk"]
+      #privileged: true
+      #netns: "host"
+
+  links:
+  - endpoints: [goBGP1:eth1, wireshark:eth1]
+  - endpoints: [wireshark:eth2, goBGP2:eth1]
