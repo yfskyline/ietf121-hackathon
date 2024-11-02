@@ -1,3 +1,6 @@
 [submodule "gobgp"]
 	path = gobgp
 	url = https://github.com/yfskyline/gobgp
+[submodule "wireshark"]
+	path = wireshark
+	url = git@gitlab.com:yfskyline/wireshark.git
